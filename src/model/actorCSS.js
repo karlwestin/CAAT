@@ -444,7 +444,6 @@
             }
 
             var value=
-                "translate("+this.x+"px,"+this.y+"px) "+
                 "rotate("+this.rotationAngle+"rad) scale("+this.scaleX+","+this.scaleY+")" +
                     imageop;
 
@@ -882,11 +881,9 @@
             this.x= x;
             this.y= y;
 
-            this.style3();
-/*
             this.style('left', x+'px');
             this.style('top',  y+'px');
-*/
+
             this.dirty= true;
 
             return this;
