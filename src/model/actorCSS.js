@@ -2096,7 +2096,7 @@
                 }
 
                 for( var i=0,l=cl.length; i<l; i++ ) {
-                    cl[i].domElement.style['z-index']= i;
+                    cl[i].domElement.style.zIndex = i;
                 }
             }
         }
