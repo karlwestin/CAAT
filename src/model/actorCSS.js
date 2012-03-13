@@ -1336,20 +1336,31 @@
 		animate : function(director, time) {
             if ( !this.isInAnimationFrame(time) ) {
                 this.inFrame= false;
-                this.dirty= true;
-                this.style( 'display', 'none');
+                this.dirty = true;
+                if(this.wasvisible) {
+                    this.style( 'display', 'none');
+                    this.wasvisible = false;
+                }
                 return false;
             } else {
-                this.style( 'display', this.visible ? 'block' : 'none');
+                if(this.wasvisible !== this.visible) {
+                    this.style( 'display', this.visible ? 'block' : 'none');
+                    this.wasvisible = this.visible;
+                }
             }
 
 			for( var i=0; i<this.behaviorList.length; i++ )	{
 				this.behaviorList[i].apply(time,this);
 			}
 
-            this.frameAlpha= this.parent ? this.parent.frameAlpha*this.alpha : 1;
-            //this.setAlpha(this.frameAlpha);
-            this.styleAlpha(this.frameAlpha);
+            // I've removed the calculation with parent alpha
+            // CSS Opacity affects all children elements as well
+            // TODO: look if IE's filters does that.
+            if (this.frameAlpha!==this.alpha) { 
+                this.frameAlpha = this.alpha;
+                this.styleAlpha(this.frameAlpha);
+            }
+            
             this.inFrame= true;
 
             this.setModelViewMatrix(false);

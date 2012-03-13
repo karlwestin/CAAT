@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Jasmine Spec Runner</title>
+
+  <link rel="stylesheet" type="text/css" href="jasmine/jasmine.css">
+  <script type="text/javascript" src="jasmine/jasmine.js"></script>
+  <script type="text/javascript" src="jasmine/jasmine-html.js"></script>
+
+
+
+  <!-- include source files here... -->
+    <script src="../src/CAAT.js"></script>
+    <script src="../src/core/class.js"></script>
+    <script src="../src/math/affinetransform2D.js"></script>
+    <script src="../src/math/color.js"></script>
+    <script src="../src/math/rectangle.js"></script>
+    <script src="../src/math/bezier.js"></script>
+    <script src="../src/math/point.js"></script>
+    <script src="../src/math/quadtree.js"></script>
+    <script src="../src/path/interpolator.js"></script>
+    <script src="../src/behaviour/behaviour.js"></script>
+    <script src="../src/behaviour/csskeyframehelper.js"></script>
+    <script src="../src/core/browserdetect.js"></script>
+    <script src="../src/model/debug.js"></script>
+    <script src="../src/model/actorCSS.js"></script>
+    <script src="../src/model/audio.js"></script>
+    <script src="../src/model/extraActor.js"></script>
+    <script src="../src/model/director.js"></script>
+    <script src="../src/model/mouseevent.js"></script>
+    <script src="../src/model/conpoundimage.js"></script>
+    <script src="../src/model/imagepreloader.js"></script>
+    <script src="../src/model/timer.js"></script>
+    <script src="../src/model/sceneCSS.js"></script>
+    <script src="../src/modules/modules.js"></script>
+    <script src="../src/modules/CircleManager/PackedCircle.js"></script>
+    <script src="../src/modules/CircleManager/PackedCircleManager.js"></script>
+    <script src="../src/modules/LocalStorage/LocalStorage.js"></script>
+    <script src="../src/modules/ImageUtil/ImageUtil.js"></script>
+    <script src="../src/modules/Layout/layout.js"></script>
+    <script src="../src/modules/Font/font.js"></script>
+    <script src="../src/path/interpolatoractor.js"></script>
+    <script src="../src/path/path.js"></script>
+    <script src="../src/path/pathactor.js"></script>
+  <!-- include spec files here... -->
+  
+    <script src="spec/model/actorCSS.js"></script>    
+ 
+ 
+ 
+  
+  <script type="text/javascript">
+    (function() {
+      var jasmineEnv = jasmine.getEnv();
+      jasmineEnv.updateInterval = 1000;
+
+      var trivialReporter = new jasmine.TrivialReporter();
+
+      jasmineEnv.addReporter(trivialReporter);
+
+      jasmineEnv.specFilter = function(spec) {
+        return trivialReporter.specFilter(spec);
+      };
+
+      var currentWindowOnload = window.onload;
+
+      window.onload = function() {
+        if (currentWindowOnload) {
+          currentWindowOnload();
+        }
+        execJasmine();
+      };
+
+      function execJasmine() {
+        jasmineEnv.execute();
+      }
+
+    })();
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>
