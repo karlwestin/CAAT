@@ -259,7 +259,7 @@
 
             var S= CAAT.Behavior.Status;
 
-			if ( this.status===S.EXPIRED || this.behaviorStartTime<0 )	{
+            if ( this.status===S.EXPIRED || this.behaviorStartTime<0 || this.behaviorStartTime > time) {
 				return false;
 			}
 			
