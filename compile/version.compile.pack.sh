@@ -10,7 +10,7 @@ echo "New generated version: ${VERSION}"
 
 #DST_FILE_NAME="${CAAT_DST}";
 DST_FILE_NAME="caat";
-CAAT_HOME="../CAAT"
+CAAT_HOME="../"
 
 VERSION=`cat version.nfo`
 
